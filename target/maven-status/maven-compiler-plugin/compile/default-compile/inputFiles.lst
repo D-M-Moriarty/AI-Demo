@@ -1,0 +1,12 @@
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/refactored/ProcessingStrategyFactory.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/refactored/DataSourceFactory.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/refactored/DataSource.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/refactored/RefactoredDataProcessor.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario3/BuggyCache.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/DemoRunner.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario2/Transaction.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/App.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario2/TransactionSummary.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario2/DataProcessor.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/DataProcessor.java
+/home/fexco.ie/dmoriarty/Development/sandbox/AI-Demo/src/main/java/com/example/demo/scenario1/refactored/ProcessingStrategy.java

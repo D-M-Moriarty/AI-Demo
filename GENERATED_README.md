@@ -51,19 +51,16 @@ Reveal the systematic prompt engineering and team practices that enable successf
    mvn clean compile
    ```
 
-2. **Prepare Demo Environment**:
+2. **Test the Demo Runner**:
    ```bash
-   # Setup tracking for your demo session
-   ./setup_run.sh 1
-   
-   # Test the demo runner
+   # Run the complete demo experience
    mvn exec:java -Dexec.mainClass="com.example.demo.DemoRunner"
    ```
 
 3. **Open Key Files in VS Code**:
    ```bash
    code src/main/java/com/example/demo/godclassrefactoring/OrderProcessor.java
-   # This is your primary demo file - the 169-line God class
+   # This is your primary demo file - the legacy God class
    ```
 
 ### Demo Presentation Flow (13-15 minutes total)
@@ -72,7 +69,7 @@ Reveal the systematic prompt engineering and team practices that enable successf
 *"I'm going to show you two things: first, Copilot's architectural capabilities in action, then the enterprise framework that makes this successful at scale."*
 
 #### Live Demo 1: Refactoring (4-5 minutes)
-- Open `DataProcessor.java`
+- Open `OrderProcessor.java`
 - **Prompt**: *"This class violates SOLID principles. How would you refactor it using design patterns?"*
 - **Follow-up**: *"I'm thinking factory + strategy pattern. Walk me through that approach."*
 - Run `mvn exec:java` to show before/after comparison
@@ -91,13 +88,13 @@ Reveal the systematic prompt engineering and team practices that enable successf
 
 #### For Immediate Use
 - **Copy-paste prompts** from `scenario*/DEMO_PROMPTS.md` files
-- **Team guidelines** in `DEMO_EXECUTION_GUIDE.md`
-- **Working examples** in `scenario*/refactored/` packages
+- **Demo script** in `DEMO.md`
+- **Working examples** in `godclassrefactoring/refactored/` package
 
 #### For Team Rollout
-- **Setup script**: `./setup_run.sh` for training sessions
-- **Result tracking**: Built-in multi-session tracking system
-- **Scaling framework**: Complete organizational adoption guide
+- **Enterprise prompt templates** in `.github/prompts/`
+- **Workspace instructions** in `.github/copilot-instructions.md`
+- **Focused demo framework** for organizational adoption
 
 ## 📖 Demo Usage Examples
 
@@ -113,8 +110,8 @@ mvn clean compile
 # 2. Run the complete demo experience
 mvn exec:java -Dexec.mainClass="com.example.demo.DemoRunner"
 
-# 3. Setup for team training session
-./setup_run.sh 1    # Prepares tracking for demo run #1
+# 3. View the demo guide
+cat DEMO.md    # Simple demo script for presenters
 ```
 
 ### Part 1: Live Demonstration Scripts
@@ -145,7 +142,7 @@ mvn exec:java
 ```
 
 #### Demo 2: Professional Documentation Generation
-**Context Setup**: "This is a complex multi-scenario project with 19 Java classes and 66 documentation files"
+**Context Setup**: "This is a complex multi-scenario project with clean architecture and enterprise-level patterns"
 
 **Live Prompt**:
 ```
@@ -176,18 +173,17 @@ Reveal the sophisticated prompt engineering infrastructure:
    - Uses advanced features: agent mode, codebase tool, githubSearch tool
 
 3. **Demo Support Files**:
-   - `scenario*/DEMO_PROMPTS.md` - Scenario-specific conversation starters
-   - `scenario*/DEMO_EXECUTION_GUIDE.md` - Team execution standards
-   - `scenario*/solutions/run*/DEMO_RESULTS.md` - Multi-session result tracking
+   - `scenario*/DEMO_PROMPTS.md` - Scenario-specific conversation starters  
+   - `godclassrefactoring/DEMO_EXECUTION_GUIDE.md` - Execution examples
+   - `DEMO.md` - Simple presentation script for demos
 
 #### The Enterprise Difference
 ```bash
 # Show the systematic approach
 find . -name "copilot-instructions.md"    # Workspace-wide standards
 find . -name "*.prompt.md" | wc -l        # 3 professional agent prompts  
-find . -name "DEMO_PROMPTS.md" | wc -l    # 8 curated prompt files
-find . -name "DEMO_RESULTS.md" | wc -l    # 20+ tracked demo sessions
-find . -name "*.md" | wc -l               # 66+ supporting documents
+find . -name "DEMO_PROMPTS.md" | wc -l    # 3 curated prompt files
+find . -name "*.md" | wc -l               # Supporting documentation
 ```
 
 **Key Message**: *"This isn't just about individual productivity - it's about building organizational capability through systematic prompt engineering and team standards."*
@@ -214,11 +210,9 @@ find . -name "*.md" | wc -l               # 66+ supporting documents
 ### Comprehensive Project Structure
 ```
 src/main/java/com/example/demo/
-├── App.java                 # Basic application entry point
 ├── DemoRunner.java          # Interactive demo runner with before/after comparisons
 ├── godclassrefactoring/     # 🏗️ Factory + Strategy Pattern Demonstration
-│   ├── DataProcessor.java   # 169-line legacy God class (anti-pattern)
-│   ├── OrderProcessor.java  # Alternative legacy example for variety
+│   ├── OrderProcessor.java  # Legacy God class (anti-pattern)
 │   └── refactored/          # Clean implementation with proper patterns
 │       ├── DataSource.java           # Strategy interface for data loading
 │       ├── ProcessingStrategy.java   # Strategy interface for processing algorithms
@@ -234,18 +228,16 @@ src/main/java/com/example/demo/
     └── BuggyCache.java      # 117 lines demonstrating enterprise code complexity
 
 src/test/java/               # Comprehensive test suite
-├── AppTest.java
 ├── godclassrefactoring/
-│   ├── DataProcessorTest.java      # Legacy class tests
-│   └── OrderProcessorTest.java     # Alternative legacy tests
-├── readmegeneration/
+│   └── OrderProcessorTest.java     # Legacy class tests
 └── debugbuggycode/
     └── BuggyCacheTest.java         # Cache implementation tests
 
 Demo Support Files/          # Demo execution and tracking
-├── DEMO_GUIDE.md           # Multi-run demo orchestration guide
-├── DEMO_SCRIPT.md          # Detailed 15-minute demo script
-├── setup_run.sh            # Demo environment setup script
+├── DEMO.md                 # Simple demo presentation script
+├── README.md               # Project documentation  
+├── GENERATED_README.md     # This comprehensive documentation
+├── README_BASIC_TEMPLATE.md # Template for README generation
 ├── .github/
 │   ├── copilot-instructions.md     # Workspace-wide Copilot standards
 │   └── prompts/            # Professional agent-mode prompt templates
@@ -253,11 +245,7 @@ Demo Support Files/          # Demo execution and tracking
 │       ├── generate-project-readme.prompt.md
 │       └── generate-team-standards.prompt.md
 └── scenario*/
-    ├── DEMO_PROMPTS.md     # Curated Copilot conversation starters
-    ├── DEMO_EXECUTION_GUIDE.md # Before/after code execution guides
-    └── solutions/          # Tracked results from multiple demo runs
-        ├── run1/, run2/, ... run10/ # Individual demo session results
-        └── 1/, 2/, 3/, 4/  # Alternative solution approaches
+    └── DEMO_PROMPTS.md     # Curated Copilot conversation starters
 ```
 
 ### Key Architectural Decisions
@@ -296,8 +284,7 @@ The project includes comprehensive testing strategies that demonstrate different
 mvn test
 
 # Test specific scenarios
-mvn test -Dtest="*DataProcessor*"      # Legacy vs refactored comparison
-mvn test -Dtest="*OrderProcessor*"     # Alternative legacy implementation
+mvn test -Dtest="*OrderProcessor*"     # Legacy implementation tests
 mvn test -Dtest="*BuggyCache*"         # Cache debugging (will fail by design)
 
 # Test pattern implementations
@@ -449,43 +436,6 @@ public class ImprovedCache<K, V> {
 }
 ```
 
-### Demo Scenario Extensions
-
-#### Scenario 4: REST API Implementation
-```java
-@RestController
-@RequestMapping("/api/transactions")
-public class TransactionController {
-    
-    @PostMapping("/process")
-    public ResponseEntity<List<TransactionSummary>> processTransactions(
-            @RequestBody List<Transaction> transactions,
-            @RequestParam String targetCurrency) {
-        // Implementation using existing DataProcessor
-    }
-    
-    @GetMapping("/analytics/{category}")
-    public ResponseEntity<Map<String, Double>> getAnalytics(@PathVariable String category) {
-        // Advanced analytics endpoint
-    }
-}
-```
-
-#### Scenario 5: Performance Optimization
-```java
-// Optimized algorithm with better time complexity
-public class OptimizedComplexAlgorithm {
-    
-    // O(n log n) instead of O(n²)
-    public List<Result> optimizedProcessing(List<Data> input) {
-        return input.parallelStream()
-                   .sorted(Comparator.comparing(Data::getPriority))
-                   .map(this::processEfficiently)
-                   .collect(Collectors.toList());
-    }
-}
-```
-
 ### Contributing Guidelines
 
 1. **Code Style**: Follow Oracle Java coding conventions
@@ -607,19 +557,19 @@ description: 'Generate team coding standards and best practices documentation'
 # Uses agent mode with specific tools and structured analysis
 ```
 
-##### 3. Multi-Run Result Tracking
-Show the **`solutions/run1/`, `run2/`... `run10/`** folders:
+##### 3. Focused Demo Infrastructure
+Show the **clean, focused project structure**:
 ```bash
-# Each demo run is tracked and analyzed
-godclassrefactoring/solutions/
-├── run1/DEMO_RESULTS.md    # First demo session results
-├── run2/DEMO_RESULTS.md    # Second demo session results
-└── run3/DEMO_RESULTS.md    # Third demo session results
+# Each scenario has curated prompts and examples
+ls src/main/java/com/example/demo/godclassrefactoring/DEMO_PROMPTS.md
+ls src/main/java/com/example/demo/readmegeneration/DEMO_PROMPTS.md
+ls src/main/java/com/example/demo/debugbuggycode/DEMO_PROMPTS.md
 
-# Team can analyze patterns:
-# - Which prompts work best?
-# - What responses are most helpful?
-# - How do different audiences react?
+# Simple demo presentation guide
+cat DEMO.md
+
+# Enterprise prompt templates ready for reuse
+ls .github/prompts/
 ```
 
 ##### 4. Organizational Learning & Improvement
@@ -637,23 +587,19 @@ godclassrefactoring/solutions/
 
 ##### Automated Demo Environment
 - **`DemoRunner.java`**: One-command demo launcher with before/after comparisons
-- **`setup_run.sh`**: Multi-session environment preparation
-- **`DEMO_SCRIPT.md`**: Detailed presentation scripts with timing
-- **Result Tracking**: 66+ documentation files supporting professional demos
+- **`DEMO.md`**: Simple presentation script with timing
+- **Clean Architecture**: Focused scenarios without unnecessary complexity
 
 ##### Enterprise Rollout Support
 ```bash
-# Quick setup for team training sessions
-./setup_run.sh 1              # First training session
-./setup_run.sh 2              # Second session with different team
-# ... up to 10 tracked sessions
+# Simple setup for team training sessions
+mvn clean compile             # Build the project
+mvn exec:java                 # Run the demo
 
-# Each session captures:
-# - Prompts used
-# - Copilot responses received  
-# - Team reactions and feedback
-# - Quality ratings (⭐⭐⭐⭐⭐)
-# - Lessons learned for next session
+# Each scenario provides:
+# - Curated prompts in DEMO_PROMPTS.md files
+# - Working examples in refactored/ packages
+# - Clear before/after comparisons
 ```
 
 ##### Scaling Copilot Adoption
@@ -753,17 +699,17 @@ BuggyCache<K, V> longTermCache = new BuggyCache<>(100, 3600000);         // Smal
 
 ### Demo Environment Configuration
 
-#### Multi-Run Setup
-Configure demo sessions using the setup script:
+#### Simple Demo Setup
+The project is designed for straightforward demonstration:
 ```bash
-# Setup for demo run number 1
-./setup_run.sh 1
+# Standard demo build
+mvn clean compile
 
-# Prepare for specific audience
-./setup_run.sh 5 --audience="senior-developers"
+# Run the demo
+mvn exec:java -Dexec.mainClass="com.example.demo.DemoRunner"
 
-# Reset all demo results
-./setup_run.sh --reset
+# View demo script
+cat DEMO.md
 ```
 
 #### Copilot Chat Preparation
@@ -838,7 +784,7 @@ mvn exec:java               # Demo functionality
 # 4. Document and integrate
 # - Add to DemoRunner.java
 # - Create DEMO_PROMPTS.md
-# - Update this README
+# - Update README.md
 
 # 5. Submit for review
 git push origin feature/scenario-9-websockets
@@ -861,8 +807,8 @@ Priority areas for expansion:
 - **Integration Testing**: Cross-scenario workflow validation
 
 #### 3. Demo Infrastructure Improvements
-- **Automated Setup**: Enhanced `setup_run.sh` with environment detection
-- **Result Analytics**: Statistical analysis of demo outcomes across runs
+- **Automated Setup**: Enhanced demo environment with simple commands
+- **Result Analytics**: Track demo effectiveness and audience engagement
 - **Video Integration**: Screen recording and playback capabilities
 - **Remote Demo Support**: Cloud-based demo environment provisioning
 
@@ -881,10 +827,7 @@ Priority areas for expansion:
 ```bash
 # Required test passes before merge
 mvn clean test                           # All unit tests
-mvn test -Dtest="*Integration*"         # Integration scenarios  
-mvn test -Dtest="*Performance*"         # Performance benchmarks
 mvn exec:java                           # Demo runner functionality
-./setup_run.sh 1 && ./validate_demo.sh # Demo environment validation
 ```
 
 ### Community & Usage
@@ -1099,11 +1042,11 @@ mvn test -Dtest="BuggyCacheTest#testPerformanceUnderLoad"    # Inefficient evict
 ### Legacy Code Issues (Scenario 1)
 
 #### God Class Anti-Pattern
-The original `DataProcessor.java` demonstrates classic code smells:
+The original `OrderProcessor.java` demonstrates classic code smells:
 
 ```java
-// PROBLEM: Single class doing everything (169 lines)
-public class DataProcessor {
+// PROBLEM: Single class doing everything (large monolithic class)
+public class OrderProcessor {
     // Violates Single Responsibility Principle
     public String processData(String dataType, String processingType, List<String> rawData) {
         // Multiple switch statements (code duplication)
@@ -1255,11 +1198,9 @@ SOFTWARE.
 **Built for GitHub Copilot Demonstrations** - A professional platform for showcasing AI-powered development workflows in enterprise environments.
 
 ### Project Statistics
-- **19 Java Classes**: Comprehensive enterprise scenario coverage
-- **66+ Documentation Files**: Extensive demo support materials  
-- **8 Demo Scenarios**: Real-world development workflow examples
-- **15+ Test Classes**: Quality assurance and debugging demonstrations
+- **Core Java Classes**: Focused enterprise scenario coverage
+- **3 Demo Scenarios**: God class refactoring, README generation, and cache debugging
 - **3 Main Patterns**: Factory, Strategy, and Template Method implementations
-- **10 Demo Run Slots**: Multi-session result tracking system
+- **Clean Architecture**: Streamlined for demonstration effectiveness
 
 **Contact**: For questions about usage rights or collaboration opportunities, please open an issue in the project repository.

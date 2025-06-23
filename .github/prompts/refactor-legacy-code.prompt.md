@@ -29,4 +29,8 @@ Use the codebase tool to analyze the legacy code and provide comprehensive refac
 - **Testing Strategy**: How to verify the refactoring works
 - **Migration Path**: How to safely transition from old to new
 
+## Code Style Standards:
+- **One Class Per File**: Each class should be in its own .java file
+- **Proper Package Structure**: Follow Java naming conventions
+
 Use the githubSearch tool if you need to reference common design pattern implementations or best practices.

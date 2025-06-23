@@ -15,6 +15,8 @@ This is a Java demonstration project for showcasing GitHub Copilot Chat capabili
 - Include JavaDoc comments for public methods
 - Follow standard Java naming conventions
 - Prefer explicit over implicit when it aids readability
+- Follow one class per file convention (except for inner classes with specific purpose)
+- Each public class should have its own .java file matching the class name
 
 ## Common Use Cases for This Demo
 1. **Code Explanation**: Ask Copilot to explain complex methods or algorithms

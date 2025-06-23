@@ -13,9 +13,9 @@ A Java demonstration project designed for showcasing GitHub Copilot Chat capabil
 mvn compile
 ```
 
-### Running the Application
+### Running the Demo
 ```bash
-mvn exec:java -Dexec.mainClass="com.example.demo.App"
+mvn exec:java -Dexec.mainClass="com.example.demo.DemoRunner"
 ```
 
 ### Running Tests
@@ -28,9 +28,12 @@ mvn test
 ```
 src/
 ├── main/java/com/example/demo/
-│   └── App.java                 # Main application class
+│   ├── DemoRunner.java          # Demo runner
+│   ├── godclassrefactoring/     # Refactoring demonstration
+│   ├── readmegeneration/       # README generation demo
+│   └── debugbuggycode/         # Debugging demonstration
 └── test/java/com/example/demo/
-    └── AppTest.java             # JUnit test class
+    └── [test files]
 ```
 
 This project contains various Java classes and examples for demonstration purposes.

@@ -4,22 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- * LEGACY CODE - A monolithic class that handles all types of data processing
- * Perfect example for demonstrating Factory + Strategy refactoring with Copilot Chat.
- * 
- * Issues to discuss with Copilot:
- * - Violates Single Responsibility Principle
- * - Hard to test and maintain
- * - Difficult to extend with new processing types
- * - Multiple switch statements (code smell)
- * 
- * Ask Copilot: "This class violates SOLID principles. How would you refactor it using design patterns?"
- * Follow up: "I'm thinking factory + strategy pattern. Walk me through that approach"
- */
 public class OrderProcessor {
-    
-    // This class does WAY too much!
     
     public String processData(String dataType, String processingType, List<String> rawData) {
         // Data loading logic - varies by source type

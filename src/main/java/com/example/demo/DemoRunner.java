@@ -2,73 +2,51 @@ package com.example.demo;
 
 import com.example.demo.godclassrefactoring.OrderProcessor;
 import com.example.demo.godclassrefactoring.refactored.RefactoredDataProcessor;
-import com.example.demo.debugbuggycode.BuggyCache;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * Demo runner to showcase all three scenarios.
- * Use this to quickly navigate between demo sections during presentation.
+ * Demo runner to showcase god class refactoring.
+ * Run this to see the before/after comparison of the refactored code.
  */
 public class DemoRunner {
     
     public static void main(String[] args) {
-        System.out.println("=== GitHub Copilot Chat Demo ===\n");
+        System.out.println("=== GitHub Copilot God Class Refactoring Demo ===\n");
         
-        System.out.println("Scenario 1: Factory + Strategy Refactoring (3 min)");
-        System.out.println("File: godclassrefactoring/OrderProcessor.java (God class)");
-        System.out.println("Ask Copilot: 'This class violates SOLID principles. How would you refactor it using design patterns?'");
-        System.out.println("Follow up: 'I'm thinking factory + strategy pattern. Walk me through that approach'\n");
+        // Test data for demonstration
+        List<String> testData = Arrays.asList("row1", "row2", "row3");
         
-        System.out.println("Scenario 2: Technical Documentation (2.5 min)");
-        System.out.println("File: readmegeneration/DataProcessor.java");
-        System.out.println("Ask Copilot: 'Generate comprehensive documentation for this class'");
-        System.out.println("Follow up: 'Make it more focused for junior developers'\n");
+        // Demonstrate the god class (before refactoring)
+        demonstrateGodClass(testData);
         
-        System.out.println("Scenario 3: Quick Problem Solving (2.5 min)");
-        System.out.println("File: scenario3/BuggyCache.java");
-        System.out.println("Ask Copilot: 'Help me find the bugs in this cache implementation'\n");
+        System.out.println("\n" + "=".repeat(50) + "\n");
         
-        // Quick demo of each scenario
-        demonstrateScenario1();
-        demonstrateScenario2();
-        demonstrateScenario3();
+        // Demonstrate the refactored version (after refactoring)
+        demonstrateRefactoredVersion(testData);
     }
     
-    private static void demonstrateScenario1() {
-        System.out.println("\n--- Scenario 1: Before/After Comparison ---");
+    private static void demonstrateGodClass(List<String> testData) {
+        System.out.println("🔴 BEFORE: God Class (OrderProcessor)");
+        System.out.println("File: godclassrefactoring/OrderProcessor.java");
+        System.out.println("Issues: Multiple responsibilities, switch statements, hard to test\n");
         
-        // Same input data for fair comparison
-        java.util.List<String> testData = Arrays.asList("row1,value1", "row2,value2", "row3,value3");
+        OrderProcessor godClass = new OrderProcessor();
+        String result = godClass.processData("csv", "analytics", testData);
         
-        System.out.println("🔴 LEGACY (God Class) - OrderProcessor:");
-        OrderProcessor legacyProcessor = new OrderProcessor();
-        String legacyResult = legacyProcessor.processData("csv", "analytics", testData);
-        System.out.println("   Input: " + testData);
-        System.out.println("   Output: " + legacyResult);
+        System.out.println("Result: " + result);
+    }
+    
+    private static void demonstrateRefactoredVersion(List<String> testData) {
+        System.out.println("🟢 AFTER: Refactored (Factory + Strategy Pattern)");
+        System.out.println("File: godclassrefactoring/refactored/RefactoredDataProcessor.java");
+        System.out.println("Benefits: Single responsibility, extensible, testable\n");
         
-        System.out.println("\n🟢 REFACTORED (Factory + Strategy) - RefactoredDataProcessor:");
         RefactoredDataProcessor refactoredProcessor = new RefactoredDataProcessor();
-        String refactoredResult = refactoredProcessor.processData("csv", "analytics", testData);
-        System.out.println("   Input: " + testData);
-        System.out.println("   Output: " + refactoredResult);
+        String result = refactoredProcessor.processData("csv", "analytics", testData);
         
-        System.out.println("\n✅ Results match: " + legacyResult.equals(refactoredResult));
-        System.out.println("💡 Same functionality, cleaner architecture!");
-    }
-    
-    private static void demonstrateScenario2() {
-        System.out.println("\n--- Running Scenario 2 Example ---");
-        System.out.println("Scenario 2 demonstrates technical documentation generation");
-        System.out.println("Open readmegeneration/DataProcessor.java to see complex algorithms needing docs");
-    }
-    
-    private static void demonstrateScenario3() {
-        System.out.println("\n--- Running Scenario 3 Example ---");
-        BuggyCache<String, String> cache = new BuggyCache<>(5, 1000);
-        
-        cache.put("demo", "value");
-        System.out.println("Cache value: " + cache.get("demo"));
-        System.out.println("Cache size: " + cache.size());
+        System.out.println("Result: " + result);
+        System.out.println("\n✅ Same functionality, better design!");
     }
 }

@@ -1,43 +1,32 @@
 ---
-mode: 'edit'
-description: 'Analyze legacy code and implement comprehensive refactoring with design patterns'
+mode: 'agent'
+tools: ['codebase', 'githubSearch']
+description: 'Analyze legacy code and provide comprehensive refactoring recommendations'
 ---
 
-# Legacy Code Refactoring Implementation
+# Legacy Code Refactoring Agent
 
-Analyze the legacy code using the codebase tool, then implement comprehensive refactoring following SOLID principles and design patterns.
+Use the codebase tool to analyze the legacy code and provide comprehensive refactoring recommendations following SOLID principles and design patterns.
 
-## Implementation Requirements:
-- **Code Analysis**: Identify violations of SOLID principles
-- **Design Pattern Implementation**: Apply appropriate patterns (Factory, Strategy, Observer, etc.)
-- **File Creation**: Create new refactored classes and interfaces
-- **Code Migration**: Update existing code to use new patterns
-- **Preserve Functionality**: Ensure all existing behavior is maintained
-
-## Implementation Steps:
-1. **Analysis Phase**: Review current code structure and identify issues
-2. **Design Phase**: Plan the refactored architecture with design patterns
-3. **Implementation Phase**: Create new files and refactor existing ones
-4. **Verification Phase**: Ensure tests still pass and functionality is preserved
+## Analysis Requirements:
+- **Code Review**: Identify violations of SOLID principles
+- **Design Pattern Opportunities**: Suggest appropriate patterns (Factory, Strategy, Observer, etc.)
+- **Refactoring Plan**: Step-by-step implementation approach
+- **Impact Assessment**: Benefits, risks, and migration strategy
+- **Code Examples**: Concrete implementation samples
 
 ## Focus Areas:
-1. **Single Responsibility**: Split large classes into focused components
-2. **Open/Closed**: Implement extensible patterns
-3. **Dependency Inversion**: Create abstractions and interfaces
-4. **Code Duplication**: Extract common functionality
-5. **Testability**: Make code easier to unit test
+1. **Single Responsibility**: Classes doing too much
+2. **Open/Closed**: Hard-coded logic that should be extensible
+3. **Dependency Inversion**: Tight coupling issues
+4. **Code Duplication**: Repeated logic that can be abstracted
+5. **Testability**: Areas difficult to unit test
 
-## Target Analysis
-Analyze the code in `${file}` or use `${selection}` if specific code is selected.
+## Deliverables:
+- **Problem Analysis**: What's wrong with current implementation
+- **Proposed Solution**: Design pattern implementation
+- **Refactored Code**: Complete working examples
+- **Testing Strategy**: How to verify the refactoring works
+- **Migration Path**: How to safely transition from old to new
 
-## Workspace Context
-Working in: `${workspaceFolder}`
-Project: `${workspaceFolderBasename}`
-
-## Prerequisites
-Follow the guidelines in [code-analysis.prompt.md](./code-analysis.prompt.md) before proceeding.
-
-## Testing Strategy
-Apply the testing patterns from [test-generation.prompt.md](./test-generation.prompt.md).
-
-Create all necessary new files and modify existing ones to implement the refactoring.
+Use the githubSearch tool if you need to reference common design pattern implementations or best practices.

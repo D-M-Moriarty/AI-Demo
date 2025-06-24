@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class OrderProcessor {
-    
+
     public String processData(String dataType, String processingType, List<String> rawData) {
         // Data loading logic - varies by source type
         Object loadedData = null;
@@ -29,7 +29,7 @@ public class OrderProcessor {
             default:
                 throw new IllegalArgumentException("Unsupported data type: " + dataType);
         }
-        
+
         // Data processing logic - varies by processing type
         Object processedData = null;
         switch (processingType.toLowerCase()) {
@@ -52,7 +52,7 @@ public class OrderProcessor {
             default:
                 throw new IllegalArgumentException("Unsupported processing type: " + processingType);
         }
-        
+
         // Output formatting logic - also varies by type
         String formattedOutput = null;
         switch (dataType.toLowerCase()) {
@@ -69,13 +69,13 @@ public class OrderProcessor {
                 formattedOutput = formatDatabaseOutput(processedData);
                 break;
         }
-        
+
         // Logging and monitoring
         logProcessingMetrics(dataType, processingType, rawData.size());
-        
+
         return formattedOutput;
     }
-    
+
     // Data loading methods - each has different logic
     private Object loadCsvData(List<String> rawData) {
         // CSV parsing logic
@@ -84,7 +84,7 @@ public class OrderProcessor {
         csvData.put("rows", rawData.size());
         return csvData;
     }
-    
+
     private Object loadJsonData(List<String> rawData) {
         // JSON parsing and API calls
         Map<String, Object> jsonData = new HashMap<>();
@@ -92,7 +92,7 @@ public class OrderProcessor {
         jsonData.put("apiResponse", "success");
         return jsonData;
     }
-    
+
     private Object loadXmlData(List<String> rawData) {
         // XML parsing with namespace handling
         Map<String, Object> xmlData = new HashMap<>();
@@ -100,7 +100,7 @@ public class OrderProcessor {
         xmlData.put("schema", "legacy");
         return xmlData;
     }
-    
+
     private Object loadDatabaseData(List<String> rawData) {
         // Database connection and query execution
         Map<String, Object> dbData = new HashMap<>();
@@ -108,46 +108,48 @@ public class OrderProcessor {
         dbData.put("connection", "active");
         return dbData;
     }
-    
+
     // Processing methods - each has different algorithms
     private Object processAnalytics(Object data) {
         // Complex analytics algorithms
         return "Analytics result for: " + data.toString();
     }
-    
+
     private Object processTransformation(Object data) {
         // Data transformation rules
         return "Transformed: " + data.toString();
     }
-    
+
     private Object processValidation(Object data) {
         // Data quality validation
         return "Validated: " + data.toString();
     }
-    
+
     private Object processAggregation(Object data) {
         // Data aggregation logic
         return "Aggregated: " + data.toString();
     }
-    
+
     // Output formatting methods
     private String formatCsvOutput(Object data) {
         return "CSV Output: " + data.toString();
     }
-    
+
     private String formatJsonOutput(Object data) {
         return "JSON Output: " + data.toString();
     }
-    
+
     private String formatXmlOutput(Object data) {
         return "XML Output: " + data.toString();
     }
-    
+
     private String formatDatabaseOutput(Object data) {
         return "Database Output: " + data.toString();
     }
-    
+
     private void logProcessingMetrics(String dataType, String processingType, int dataSize) {
         System.out.println("Processed " + dataSize + " records of " + dataType + " using " + processingType);
     }
 }
+
+

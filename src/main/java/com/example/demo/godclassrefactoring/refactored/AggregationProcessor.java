@@ -11,3 +11,4 @@ public class AggregationProcessor implements ProcessingStrategy {
         return "Aggregated: " + data.toString();
     }
 }
+

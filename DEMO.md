@@ -23,13 +23,13 @@
 
 **In Copilot Chat, type exactly:**
 ```
-@refactor-legacy-code
+#file:OrderProcessor.java #file:.github/prompts/refactor-legacy-code.prompt.md Analyze this legacy code using our team's refactoring standards from the prompt file.
 ```
 
 **While it responds:**
-- "This uses our team's standardized refactoring prompt"
+- "This uses our team's standardized refactoring prompt file"
 - "Notice how it identifies specific SOLID violations"
-- "It's suggesting concrete design patterns"
+- "It's suggesting concrete design patterns like Factory and Strategy"
 
 **Follow-up prompt:**
 ```

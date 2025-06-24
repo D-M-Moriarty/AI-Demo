@@ -1,7 +1,5 @@
 # Demo Run 1 - Scenario 1: Factory + Strategy Refactoring
 
-# Demo Run 1 - Scenario 1: Factory + Strategy Refactoring
-
 **Time**: 14:30 - 14:33
 **Audience**: Practice Run (AI Assistant Demo)
 **Group Size**: 1
@@ -307,84 +305,3 @@ Compare this to the original God class where adding Parquet would require modify
 
 **Time taken:** 3.5 minutes (slightly over, but great content)
 
-## Prompt 1: Opening Problem Identification
-```
-I have this OrderProcessor class that started simple but has grown into a monster. It handles data loading, processing, and formatting all in one place. Can you explain what's wrong with this design and how I should refactor it?
-```
-
-**Copilot Response:**
-```
-[Paste response here]
-```
-
-**Notes:**
-- Quality of problem identification: ⭐⭐⭐⭐⭐
-- Did it mention specific SOLID violations? Y/N
-- Surprising insights: 
-
----
-
-## Prompt 2: SOLID Principles Discussion
-```
-This class violates SOLID principles. How would you break it down using design patterns?
-```
-
-**Copilot Response:**
-```
-[Paste response here]
-```
-
-**Notes:**
-- Which patterns suggested: 
-- How detailed was explanation: ⭐⭐⭐⭐⭐
-- Audience reaction: 
-
----
-
-## Prompt 3: Factory + Strategy Implementation
-```
-I'm thinking factory pattern for the data sources and strategy pattern for processing. Walk me through that approach and show me the implementation.
-```
-
-**Copilot Response:**
-```
-[Paste response here]
-```
-
-**Generated Code Files:**
-- [ ] Save any .java files generated in this folder
-
-**Notes:**
-- Code quality vs. my refactored solution: ⭐⭐⭐⭐⭐
-- Differences in approach:
-- Better/worse design decisions:
-
----
-
-## Prompt 4: Benefits Discussion
-```
-How would this refactored design make the code more testable and maintainable?
-```
-
-**Copilot Response:**
-```
-[Paste response here]
-```
-
-**Notes:**
-- Quality of testing discussion: ⭐⭐⭐⭐⭐
-- Concrete examples provided: Y/N
-
----
-
-## Overall Run Notes
-**What worked well:**
-
-
-**What to improve:**
-
-
-**Audience questions:**
-
-
-**Time taken:** _____ minutes

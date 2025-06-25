@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-tools: ['codebase', 'githubSearch']
+tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runNotebooks', 'runTasks', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI', 'atlassian', 'configurePythonEnvironment', 'getPythonEnvironmentInfo', 'getPythonExecutableCommand', 'installPythonPackage', 'get_syntax_docs', 'mermaid-diagram-preview', 'mermaid-diagram-validator']
 description: 'Analyze legacy code and provide comprehensive refactoring recommendations'
 ---
 

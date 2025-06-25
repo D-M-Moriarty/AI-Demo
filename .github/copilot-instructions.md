@@ -1,5 +1,7 @@
 <!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
-
+---
+applyTo: "**"
+---
 # GitHub Copilot Instructions for Java Demo Project
 
 This is a Java demonstration project for showcasing GitHub Copilot Chat capabilities.
